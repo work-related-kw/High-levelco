@@ -1,0 +1,348 @@
+/* Global Styles */
+body {
+    font-family: 'Cairo', sans-serif; /* Nice Arabic/English font */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.7;
+    direction: rtl; /* Arabic Right-to-Left */
+  }
+  
+  /* Header */
+  header {
+    background: #4CAF50;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  
+  header p {
+    margin-top: 10px;
+    font-size: 1.2em;
+  }
+  
+  /* Sections */
+  section {
+    background: white;
+    margin: 20px auto;
+    padding: 30px 20px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+  
+  /* Section Headings */
+  section h2 {
+    color: #4CAF50;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  
+  /* Lists */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
+  
+  /* Contact Buttons */
+  div a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 10px;
+    margin: 0px;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 2em;
+  }
+  
+  div a:hover {
+    background: #45a049;
+  }
+  
+  /* Footer */
+  footer {
+    background: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.9em;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2em;
+    }
+  
+    header p {
+      font-size: 1em;
+    }
+  
+    section {
+      padding: 20px 15px;
+    }
+  
+    div a {
+      padding: 10px 15px;
+      font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    div a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .logo span {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+  }
+  
+  
+#what {
+    position: fixed; /* 👈 changed from absolute to fixed */
+    top: 2%; /* Adjust vertical position */
+    left: 0; /* Stick to the right edge */
+    z-index: 1000;
+background-image: url('images/wlogo.png');
+    color: rgb(11, 34, 239);
+    border: none;
+    border-radius: 0px 30px 30px 0px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(62, 0, 255, 0.3), 0px 0px 15px rgba(62, 0, 255, 0.5);
+    animation: bounceUpDown 2s infinite ease-in-out;
+    background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+
+}
+
+/* #what:hover {
+    background: linear-gradient(135deg, #3e00ff, #a000f0);
+    transform: scale(1.05);
+} */
+#what:hover {
+    box-shadow: 0px 0px 20px rgba(62, 0, 255, 0.6);
+    transform: scale(1.1);
+}
+
+
+#what i {
+    font-size: 24px;
+}
+
+/* Animation: Bounce Up and Down */
+@keyframes bounceUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.social-icons  {
+  display: flex;
+  justify-content: center;  /* 👉 center the icons horizontally */
+  align-items: center;
+  gap: 20px;  /* space between icons */
+  margin: 30px 0;
+}
+
+.social-icons img {
+  width: 40px;             /* adjust icon size */
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background: none;        /* no background */
+  border-radius: 0;        /* no corners, pure image */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);   /* smooth hover effect */
+}
+/* Hero Section */
+.hero {
+  background-image: url('images/hero.jpg'); /* or solid color */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  color: white;
+  direction: rtl;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Optional overlay for readability */
+  z-index: 0;
+}
+
+/* Ensure content is on top of overlay */
+.hero .logo,
+.hero .tagline {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo wrapper */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Image */
+.logo img {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Logo Text Under Image */
+.logo-text {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Tagline */
+.tagline {
+  font-size: 1.3em;
+  margin-top: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+/* Services Section */
+.services {
+  background: #fff;
+  padding: 40px 20px;
+  margin: 30px auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  direction: rtl;
+}
+
+.services h2 {
+  color: #4CAF50;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-right: 5px solid #4CAF50;
+  padding-right: 10px;
+}
+.contact-section h2{
+    color: black;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-right: 5px solid #4CAF50;
+  padding-right: 10px;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.services ul li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: #f5f5f5;
+  border-right: 4px solid #4CAF50;
+  border-radius: 6px;
+  font-size: 1.05em;
+  transition: background-color 0.3s ease;
+}
+
+.services ul li:hover {
+  background-color: #eaffea;
+}
+
+.services .highlight {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  background: #eafaf1;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+  display: block;
+}
+@media (max-width: 600px) {
+  .logo img {
+    max-width: 100px;
+  }
+
+  .logo-text {
+    font-size: 1.5em;
+  }
+
+  .tagline {
+    font-size: 1.1em;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+}
+/* ✅ FORCE green for this section */
+.contact-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-section h2,
+.contact-section p {
+  color: black !important; /* Force override */
+}
+.animated-text {
+  font-size: 1.3em;
+  font-weight: bold;
+  background: linear-gradient(270deg, #4caf50, #2196f3, #ff9800);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowText 5s ease infinite;
+}
+
+/* Animation Keyframes */
+@keyframes rainbowText {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
